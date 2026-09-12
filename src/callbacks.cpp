@@ -796,6 +796,8 @@ ultramodern::renderer::WindowHandle create_window(ultramodern::gfx_callbacks_t::
     Uint32 flags = SDL_WINDOW_RESIZABLE | SDL_WINDOW_ALLOW_HIGHDPI;
 #if defined(__APPLE__)
     flags |= SDL_WINDOW_METAL;
+#elif defined(__linux__)
+    flags |= SDL_WINDOW_VULKAN;
 #endif
 
     SDL_Rect display{};
